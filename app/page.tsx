@@ -1,26 +1,56 @@
-import React from "react";
+import Image from 'next/image'
+import { Bungee_Tint } from "next/font/google";
+import Link from 'next/link';
 
-export default function Home() {
-return (
-    <div className="flex items-center justify-center min-h-screen bg-wight-200">
-    <div className="relative w-[350px] h-[150px] bg-green-500 text-white text-center">
-        
-        <h1 className="absolute top-[-20px] left-1/2 transform -translate-x-1/2 bg-cyan-100 text-black px-3 py-1 text-lg border border-black">
-        Banner
-        </h1>
+const bungee = Bungee_Tint({
+  subsets: ["latin"],
+  weight: "400",
+});
 
-        <button className="absolute top-0 right-0 bg-gray-200 text-black px-1 border border-black text-xs rounded-sm">
-        x
-        </button>
+export default function MyApp() {
+  return (<div>
+    {/* grid-cols-1 gap-4 
+      sm:grid-cols-2
+      md:grid-cols-3
+      lg:grid-cols-4
+      xl:grid-cols-5
 
-        <div className="absolute left-[-30px] top-[30%] w-[60px] h-[60px] bg-white rounded-full"></div>
+      flex flexwrap */}
 
-        <div className="absolute right-[-25px] bottom-[-25px] w-[90px] h-[55px] bg-white rounded-t-[40px] rounded-l-[30px]"></div>
+    <h1 className={`${bungee.className} "font-bold m-2 p-2"`}>Hello world!!</h1>
+    <Link className="w-15 p-2 bg-blue-500 text-white" href={'/FOO'}> go to foo
+    </Link>
 
-        <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2 py-2 text-lg border border-dotted border-white">
-        This is css position
-        </span>
+    <div className="w-[80%] border rounded p-4 m-auto bg-slate-100 
+     grid 
+    grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4">
+      <Image
+        className='p-2 m-4'
+        src="https://computing.psu.ac.th/th/wp-content/uploads/2023/09/PSU-CoC-ENG_01_x49.png"
+        width={150}
+        height={150}
+        alt="PSU Logo"
+      />
+
+      <Image
+        className="p-2 m-4"
+        src="/next.svg"
+        width={150}
+        height={150}
+        alt="Next.js Logo"
+      />
+
+      <div className="w-64 p-2 border mb-2 rounded bg-blue-200 hover:bg-blue-700 hover:text-blue-50">
+        Lorem idivsum, dolor sit amet consectetur adidivisicing elit. Doloribus, consequuntur.
+      </div>
+      <div className="w-64 p-2 border mb-2 rounded bg-blue-600 text-white">
+        Lorem idivsum, dolor sit amet consectetur adidivisicing elit. Doloribus, consequuntur.
+      </div>
+      <div className="w-64 p-2 border rounded bg-amber-300">
+        Lorem idivsum, dolor sit amet consectetur adipisicing elit. Doloribus, consequuntur.
+      </div>
+  
     </div>
-    </div>
-);
+
+  </div>)
 }

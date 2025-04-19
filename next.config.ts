@@ -8,6 +8,16 @@ const nextConfig: NextConfig = {
         hostname: 'computing.psu.ac.th',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'img.advice.co.th',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+        pathname: '/**',
+      },
     ],
   },
 };
